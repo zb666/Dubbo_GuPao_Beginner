@@ -1,0 +1,6 @@
+# Project exclude paths
+/dubbo-client-sample/target/
+/dubbo-server-sample/dubbo-server/target/
+/dubbo-server-sample/dubbo-server-api/target/
+/spring-boot-dubbo-example/spring-boot-dubbo-sample-api/target/
+/spring-cloud-dubbo-example/spring-cloud-dubbo-sample-api/target/
