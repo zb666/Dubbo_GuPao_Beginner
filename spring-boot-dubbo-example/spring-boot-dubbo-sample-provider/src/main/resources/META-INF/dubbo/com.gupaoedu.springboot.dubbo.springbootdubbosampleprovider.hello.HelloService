@@ -1,0 +1,1 @@
+helloService = com.gupaoedu.springboot.dubbo.springbootdubbosampleprovider.hello.impl.HelloServiceImpl

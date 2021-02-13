@@ -2,6 +2,7 @@ package com.gupaoedu.springboot.dubbo.springbootdubbosampleconsumer;
 
 import com.gupaoedu.springboot.dubbo.ISayHelloService;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.Method;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +16,16 @@ public class SpringBootDubboSampleConsumerApplication {
         SpringApplication.run(SpringBootDubboSampleConsumerApplication.class, args);
     }
 
-    //注册在shanghai hunan 这2个中心
     @DubboReference(
-            registry = {"shanghai", "hunan"}, version = "2.0"
+            registry = {"shanghai", "hunan"},
+            version = "2.0",
+            loadbalance = "roundrobin",
+            timeout = 500,
+            cluster = "failfast",
+            check = false
+//            methods = {
+//               @Method(loadbalance = "random",name = "sayHello()")
+//            }
     )
     ISayHelloService sayHelloService;
 
